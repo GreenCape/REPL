@@ -1,0 +1,21 @@
+{
+  "name": "greencape/repl",
+  "description": "A generic Read-Eval-Print Loop for PHP",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Niels Braczek",
+      "email": "nbraczek@bsds.de"
+    }
+  ],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "GreenCape\\REPL\\": "src/",
+      "GreenCape\\REPL\\Test\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0"
+  }
+}
