@@ -4,11 +4,18 @@ namespace GreenCape\REPL;
 
 use Throwable;
 
+/**
+ * Class ReadEvalPrintLoop
+ *
+ * @package GreenCape\REPL
+ */
 final class ReadEvalPrintLoop
 {
     /**
-     * @param  \GreenCape\REPL\EvaluatorInterface  $evaluator
-     * @param  resource                            $input
+     * ReadEvalPrintLoop constructor.
+     *
+     * @param  \GreenCape\REPL\EvaluatorInterface  $evaluator  The evaluator to use
+     * @param  resource                            $input      An optional input stream, defaults to STDIN
      */
     public function __construct(
         private readonly EvaluatorInterface $evaluator,
@@ -21,6 +28,12 @@ final class ReadEvalPrintLoop
         rewind($this->input);
     }
 
+    /**
+     * Run the loop
+     *
+     * The loop reads a query from the input stream, evaluates it and prints the result.
+     * The loop is terminated by the query 'exit'.
+     */
     public function run(): void
     {
         $this->evaluator->init();
@@ -53,7 +66,9 @@ final class ReadEvalPrintLoop
     }
 
     /**
-     * @param  \Throwable  $e
+     * Print an exception
+     *
+     * @param  \Throwable  $e  The exception to print
      *
      * @return void
      */
@@ -68,6 +83,13 @@ final class ReadEvalPrintLoop
         } while ($e);
     }
 
+    /**
+     * Read a line from the input stream
+     *
+     * @param  string  $prompt  An optional prompt
+     *
+     * @return string
+     */
     private function readline(string $prompt = ''): string
     {
         echo $prompt;

@@ -7,12 +7,17 @@ use GreenCape\REPL\Test\Evaluator\ExceptionIssuer;
 use GreenCape\REPL\Test\Evaluator\Mocker;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class LoopTest
+ *
+ * @package GreenCape\REPL\Test
+ */
 class LoopTest extends TestCase
 {
     /**
      * @testdox init() and exit() are called on the evaluator, query is evaluated
      *
-     * @covers \GreenCape\REPL\ReadEvalPrintLoop
+     * @covers  \GreenCape\REPL\ReadEvalPrintLoop
      * @return void
      */
     public function testLoopSingleLine(): void
@@ -46,7 +51,7 @@ class LoopTest extends TestCase
     /**
      * @testdox Lines ending with backslash signal continuation
      *
-     * @covers \GreenCape\REPL\ReadEvalPrintLoop
+     * @covers  \GreenCape\REPL\ReadEvalPrintLoop
      * @return void
      */
     public function testLoopMultiLine(): void
@@ -78,7 +83,7 @@ class LoopTest extends TestCase
     /**
      * @testdox Exceptions are caught and printed
      *
-     * @covers \GreenCape\REPL\ReadEvalPrintLoop
+     * @covers  \GreenCape\REPL\ReadEvalPrintLoop
      * @return void
      */
     public function testExceptionHandling(): void
